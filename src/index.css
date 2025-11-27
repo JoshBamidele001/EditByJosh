@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ef4444 #18181b;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #18181b;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ef4444;
+    border-radius: 4px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
+    opacity: 0.03;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5),
+                 0 0 20px rgba(239, 68, 68, 0.3),
+                 0 0 30px rgba(239, 68, 68, 0.2);
+  }
+
+  .glow-button {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .glow-button:hover {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.5),
+                0 0 40px rgba(239, 68, 68, 0.3);
+  }
+
+  .bg-noise {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  .animate-fade-in-delay {
+    animation: fade-in 1s ease-out 0.3s both;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out 0.2s both;
+  }
+}
+
+
+
+
+/* Fade-in cinematic */
+@keyframes fade-cinematic {
+  0% { opacity: 0; transform: translateY(40px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-fade-cinematic {
+  animation: fade-cinematic 1.6s ease-out forwards;
+}
+
+/* Rising title */
+@keyframes title-rise {
+  0% { opacity: 0; transform: translateY(60px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Slow neon pulse */
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0 0 6px #ff2d2d55, 0 0 18px #ff2d2d22; }
+  50% { text-shadow: 0 0 12px #ff2d2d, 0 0 34px #ff2d2d55; }
+}
+.neon-pulse {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+/* Line expand */
+@keyframes line-expand {
+  0% { width: 0; opacity: 0; }
+  100% { width: 10rem; opacity: 1; }
+}
+.animate-line-expand {
+  animation: line-expand 1.4s ease-out forwards;
+}
+
+/* Slow rise delay */
+@keyframes rise-delay {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-rise-delay {
+  animation: rise-delay 1.6s ease forwards 0.8s;
+}
+
+/* Slow blur fade for text */
+@keyframes slow-fade {
+  0% { opacity: 0; filter: blur(6px); }
+  100% { opacity: 1; filter: blur(0); }
+}
+.animate-slow-fade {
+  animation: slow-fade 1.8s ease forwards;
+}
+
+/* Cinematic background zoom */
+@keyframes zoom-slow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+.animate-zoom-slow {
+  animation: zoom-slow 18s linear forwards;
+}
+
+/* Floating red ember particles */
+.particle {
+  position: absolute;
+  bottom: -10px;
+  background: rgba(255, 50, 50, 0.3);
+  border-radius: 50%;
+  animation: particleRise 12s linear infinite;
+}
+@keyframes particleRise {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { opacity: 0.7; }
+  50% { opacity: 0.9; transform: translateY(-50vh) scale(1); }
+  100% { transform: translateY(-120vh) scale(1); opacity: 0; }
+}
+
+/* Assign staggered delays for particles */
+.particle-delay-0 { animation-delay: 0s; }
+.particle-delay-1 { animation-delay: 0.5s; }
+.particle-delay-2 { animation-delay: 1s; }
+.particle-delay-3 { animation-delay: 1.5s; }
+.particle-delay-4 { animation-delay: 2s; }
+.particle-delay-5 { animation-delay: 2.5s; }
+.particle-delay-6 { animation-delay: 3s; }
+.particle-delay-7 { animation-delay: 3.5s; }
+.particle-delay-8 { animation-delay: 4s; }
+.particle-delay-9 { animation-delay: 4.5s; }
+.particle-delay-10 { animation-delay: 5s; }
+.particle-delay-11 { animation-delay: 5.5s; }
+.particle-delay-12 { animation-delay: 6s; }
+.particle-delay-13 { animation-delay: 6.5s; }
+.particle-delay-14 { animation-delay: 7s; }
+.particle-delay-15 { animation-delay: 7.5s; }
+.particle-delay-16 { animation-delay: 8s; }
+.particle-delay-17 { animation-delay: 8.5s; }
+.particle-delay-18 { animation-delay: 9s; }
+.particle-delay-19 { animation-delay: 9.5s; }
+.particle-delay-20 { animation-delay: 10s; }
+.particle-delay-21 { animation-delay: 10.5s; }
+.particle-delay-22 { animation-delay: 11s; }
+.particle-delay-23 { animation-delay: 11.5s; }
+.particle-delay-24 { animation-delay: 12s; }
+
+/* Glitch title effect */
+.glitch-title {
+  position: relative;
+  color: #ff2d2d;
+  font-weight: bold;
+  animation: glitch 1.5s infinite;
+}
+.glitch-title::before,
+.glitch-title::after {
+  content: 'EditByJosh';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.glitch-title::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff0000;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 1.5s infinite linear alternate-reverse;
+}
+.glitch-title::after {
+  left: -2px;
+  text-shadow: 2px 0 #ff00ff;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+  0% { clip: rect(24px, 9999px, 56px, 0); transform: translate(0, 0); }
+  10% { clip: rect(50px, 9999px, 80px, 0); transform: translate(-5px, -2px); }
+  20% { clip: rect(30px, 9999px, 60px, 0); transform: translate(5px, 2px); }
+  30% { clip: rect(10px, 9999px, 40px, 0); transform: translate(-2px, 1px); }
+  40% { clip: rect(60px, 9999px, 90px, 0); transform: translate(2px, -1px); }
+  50% { clip: rect(20px, 9999px, 50px, 0); transform: translate(-1px, 0); }
+  60% { clip: rect(40px, 9999px, 70px, 0); transform: translate(1px, 1px); }
+  70% { clip: rect(30px, 9999px, 60px, 0); transform: translate(-2px, -1px); }
+  80% { clip: rect(50px, 9999px, 80px, 0); transform: translate(2px, 0); }
+  90% { clip: rect(10px, 9999px, 40px, 0); transform: translate(-1px, 2px); }
+  100% { clip: rect(24px, 9999px, 56px, 0); transform: translate(0, 0); }
+}
