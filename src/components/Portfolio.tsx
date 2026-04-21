@@ -6,7 +6,33 @@ interface PortfolioProps {
 
 const Portfolio = ({ onVideoSelect }: PortfolioProps) => {
   const videos = [
+      {
+      id: 'NQ0QNPe4ZSo', 
+      title: 'the Dark & Disturbing "Here Comes Honey Boo Boo" (From TLC) Iceberg',
+      category: 'Documentary',
+    },
     {
+      id: 'P_mmSJI-shU', 
+      title: 'World Leaders Who Were Executed/ Assasinated/ Suicided On Live TV Iceberg - my part',
+      category: 'Documentary',
+    },
+    {
+      id: 'JW3LxPTyeAk', 
+      title: 'the Dark & Depraved/ Every Terrorist Organization Iceberg',
+      category: 'Documentary',
+    },{
+      id: '53eTKnzWePE', 
+      title: 'the Dark & Disturbing Horrors On Russian Internet Iceberg',
+      category: 'Documentary',
+    }, {
+      id: 'q2FXq1coKh4', 
+      title: 'The Dark & Disturbing TikTok accounts Iceberg',
+      category: 'Documentary',
+    },{
+      id: '_4SYNEZyARM', 
+      title: 'Out-of-Place Artifacts Iceberg',
+      category: 'Documentary',
+    },{
       id: 'YiieaILe9dE',
       title: 'the Dark, Disturbing, Disgusting TV Game Shows Iceberg',
       category: 'Documentary',
