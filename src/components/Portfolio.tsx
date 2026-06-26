@@ -9,7 +9,7 @@ const Portfolio = ({ onVideoSelect }: PortfolioProps) => {
         {
       id: 'KGmmPKHMf1U', 
       title: 'the Distressing & Not Safe For Work Things From The Internet',
-      category: 'Documentary',
+      category: 'Short-form',
     },  {
       id: 'eIqV8ZihJhE', 
       title: 'The Dark & Disturbing Corners of Hazbin Hotel Community  Iceberg',
