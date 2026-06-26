@@ -6,7 +6,15 @@ interface PortfolioProps {
 
 const Portfolio = ({ onVideoSelect }: PortfolioProps) => {
   const videos = [
-      {
+        {
+      id: 'KGmmPKHMf1U', 
+      title: 'the Distressing & Not Safe For Work Things From The Internet',
+      category: 'Documentary',
+    },  {
+      id: 'eIqV8ZihJhE', 
+      title: 'The Dark & Disturbing Corners of Hazbin Hotel Community  Iceberg',
+      category: 'Documentary',
+    },{
       id: 'NQ0QNPe4ZSo', 
       title: 'the Dark & Disturbing "Here Comes Honey Boo Boo" (From TLC) Iceberg',
       category: 'Documentary',
